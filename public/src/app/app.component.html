@@ -1,0 +1,20 @@
+<div id="wrapper" *ngIf="recipes">
+  <div class="recipe" *ngFor="let recipe of recipes; index as i">
+    <h2>
+      {{recipe.title}}
+    </h2>
+    <div class="container">
+    <button (click)="showDetails(i)"><img class="image" alt="{{recipe.title}}" src="{{recipe.image}}"></button>
+    <div class="middle">
+      <div class="text">
+        click for details
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="button"><a href="/"><img width=75px src="assets/img/foodbutton.png"></a></div>
+  
+  <app-show *ngIf="recipe" [recipeToDisplay]="recipe"></app-show>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
